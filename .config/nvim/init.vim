@@ -97,8 +97,11 @@ nmap <C-u> :UndotreeToggle<cr>
 nmap <C-_> <Leader>c<Space>
 vmap <C-_> <Leader>c<Space>
 
+"ctrl-p launches FZF
+
+nnoremap <c-p> :FZF<cr>
+
 "vim-airline settings
 
 "enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
-~

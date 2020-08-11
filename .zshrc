@@ -123,7 +123,7 @@ autoload -U compinit && compinit
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zconf="nvim ~/.zshrc"
 alias zsource="source ~/.zshrc"
-alias nconf="nvim /usr/local/Cellar/neovim/0.4.3/share/nvim/sysinit.vim"
+alias nconf="~/.config/nvim/init.vim"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias python="/usr/local/bin/python3"
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir)
