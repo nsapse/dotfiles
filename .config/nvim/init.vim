@@ -14,7 +14,8 @@ set undodir=~/.vim/undodir'
 set undofile
 set incsearch
 
-colorscheme gruvbox 
+set cmdheight=2
+
 
 " Leader set to <Space>"
 
@@ -29,21 +30,30 @@ nnoremap<silent><leader>k :wincmd k<cr>
 nnoremap<silent><leader>l :wincmd l<cr>
 nnoremap<silent><leader>v :wincmd v<cr>
 nnoremap<silent><leader>t :wincmd t<cr>
+
+nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <leader><leader>n :nohlsearch<cr>
+
+nnoremap<silent><c-L> :vertical resize +5<cr>
+nnoremap<silent><c-H> :vertical resize -5<cr>
+nnoremap<silent><c-K> :resize -5<cr>
+nnoremap<silent><c-J> :resize +5<cr>
 
 "buffer navigation
 "
 nnoremap <silent> b] :bnext<cr>
 nnoremap <silent> b[ :bprevious<cr>
+nnoremap <silent> B] :bfirst<cr>
+nnoremap <silent> B[ :blast<cr>
 
 "Plugged Additions"
 
 call plug#begin()
 
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'easymotion/vim-easymotion'
 Plug 'jremmen/vim-ripgrep'
@@ -52,7 +62,12 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'sheerun/vim-polyglot' 
+Plug 'raimondi/delimitmate'
+Plug 'nathanaelkane/vim-indent-guides'
+
 call plug#end()
+
+colorscheme gruvbox 
 
 "Remappings for CoC
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
@@ -81,6 +96,11 @@ else
  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
 endif
 
+"additional Coc remappings for plugsin
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>rr <Plug>(coc-rename)
 
 "remapping for NERDTree
 map <C-n> :NERDTreeToggle<CR>
