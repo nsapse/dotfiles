@@ -1,35 +1,23 @@
 # If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/noah/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# Good ones - wezm, agnoster, blinks
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="wezm"
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=(  "agnoster" "blinks" "wezm" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-
-# Shows git branch on right side.
-#
-#
-# autoload -Uz vcs_info
-# precmd_vcs_info() { vcs_info }
-# precmd_functions+=( precmd_vcs_info )
-# setopt prompt_subst
-# RPROMPT=\$vcs_info_msg_0_
-# # PROMPT=\$vcs_info_msg_0_'%# '
-# zstyle ':vcs_info:git:*' formats '%b'
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -38,8 +26,14 @@ ZSH_THEME_RANDOM_CANDIDATES=(  "agnoster" "blinks" "wezm" )
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -87,11 +81,10 @@ plugins=(
     zsh-syntax-highlighting
     vi-mode
     zsh-interactive-cd
-    )
+)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.bash_profile
-autoload -U compinit && compinit
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -109,33 +102,19 @@ autoload -U compinit && compinit
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
-#
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias zconf="nvim ~/.zshrc"
+alias zconfig="nvim ~/.zshrc"
 alias zsource="source ~/.zshrc"
-alias nconf="~/.config/nvim/init.vim"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias python="/usr/local/bin/python3"
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv dir)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# # Add a space in the first prompt
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
-
-# Visual customisation of the second prompt line
-local user_symbol="$"
-if [[ $(print -P "%#") =~ "#" ]]; then
-    user_symbol = "#"
-fi
-# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias nconfig="nvim ~/.config/nvim/init.vim"
+alias xconfig="nvim ~/.xinitrc"
+alias bconfig="nvim ~/.config/bspwm/bspwmrc"
+alias sxconfig="nvim ~/.config/sxhkd/sxhkdrc"
+alias polyconfig="nvim ~/.config/polybar/config"
+alias tconfig="nvim ~/.tmux.conf"
+alias dotfiles='cd ~/.config/dotfiles'
+# alias ohmyzsh="mate ~/.oh-my-zsh"
