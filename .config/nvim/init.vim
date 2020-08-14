@@ -2,6 +2,7 @@
 
 syntax on
 
+" vim paramaters 
 set nu
 set rnu 
 set tabstop=4 softtabstop=4
@@ -12,7 +13,6 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir'
 set undofile
-set incsearch
 
 set cmdheight=2
 
@@ -22,13 +22,13 @@ set cmdheight=2
 let mapleader = " "
 
 "Remapping Default Commands to Leader
-nnoremap<silent><leader>s :wincmd s<cr>
+nnoremap<silent><leader>s :wincmd v<cr>
+nnoremap<silent><leader>S :wincmd s<cr>
 nnoremap<silent><leader>c :wincmd c<cr>
 nnoremap<silent><leader>h :wincmd h<cr>
 nnoremap<silent><leader>j :wincmd j<cr>
 nnoremap<silent><leader>k :wincmd k<cr>
 nnoremap<silent><leader>l :wincmd l<cr>
-nnoremap<silent><leader>v :wincmd v<cr>
 nnoremap<silent><leader>t :wincmd t<cr>
 
 nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
@@ -46,28 +46,43 @@ nnoremap <silent> b[ :bprevious<cr>
 nnoremap <silent> B] :bfirst<cr>
 nnoremap <silent> B[ :blast<cr>
 
+"Traditional Save and Quit Bindings
+map <c-s> :w<cr>
+map <c-q> :q<cr>
+
 "Plugged Additions"
 
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf'
+Plug 'aswathkk/darkscene.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
+Plug 'heavenshell/vim-pydocstring'
+Plug 'honza/vim-snippets'
 Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-utils/vim-man'
+Plug 'junegunn/fzf'
+Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
-Plug 'vim-airline/vim-airline'
-Plug 'sheerun/vim-polyglot' 
-Plug 'raimondi/delimitmate'
+Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'raimondi/delimitmate'
+Plug 'ryanoasis/vim-devicons'
+Plug 'sainnhe/gruvbox-material'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot' 
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-utils/vim-man'
+Plug 'yggdroot/indentline'
+Plug 'flazz/vim-colorschemes'
+Plug 'chiel92/vim-autoformat'
 
 call plug#end()
 
-colorscheme gruvbox 
+colorscheme gruvbox-material
 
 "Remappings for CoC
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
@@ -102,6 +117,9 @@ nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>rr <Plug>(coc-rename)
 
+"mappings for Coc-snippets
+imap <C-l> <Plug>(coc-snippets-expand)
+
 "remapping for NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -118,10 +136,15 @@ nmap <C-_> <Leader>c<Space>
 vmap <C-_> <Leader>c<Space>
 
 "ctrl-p launches FZF
-
 nnoremap <c-p> :FZF<cr>
+
+"Tagbar Settings
+nnoremap <Leader>T :TagbarToggle<cr>
 
 "vim-airline settings
 
 "enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
+
+"Automated Docstrings for Python
+nnoremap<silent><leader>? <Plug>(pydocstring)
