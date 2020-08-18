@@ -121,7 +121,7 @@ nmap <leader>rr <Plug>(coc-rename)
 imap <C-l> <Plug>(coc-snippets-expand)
 
 "remapping for NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <silent><C-n> :NERDTreeToggle<CR>
 
 " Remappings for vim-easymotion
 " <Leader>f{char} to move to {char} 
