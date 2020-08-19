@@ -129,6 +129,8 @@ alias gh="history|grep"
 # git aliases
 alias addall="git add ."
 alias commit="git commit -m"
+alias gs="git status"
+alias gp="git push"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
