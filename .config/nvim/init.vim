@@ -79,6 +79,7 @@ Plug 'vim-utils/vim-man'
 Plug 'yggdroot/indentline'
 Plug 'flazz/vim-colorschemes'
 Plug 'chiel92/vim-autoformat'
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -136,7 +137,7 @@ nmap <C-_> <Leader>c<Space>
 vmap <C-_> <Leader>c<Space>
 
 "ctrl-p launches FZF
-nnoremap <c-p> :FZF<cr>
+"nnoremap <c-p> :FZF<cr>
 
 "Tagbar Settings
 nnoremap <Leader>T :TagbarToggle<cr>
@@ -148,3 +149,10 @@ let g:airline#extensions#tabline#enabled = 1
 
 "Automated Docstrings for Python
 nnoremap<silent><leader>? <Plug>(pydocstring)
+
+"FloatTerm Bindings and Settings
+nnoremap   <silent>   <leader>FL   :FloatermToggle<CR>
+tnoremap   <silent>   <leader>FL   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <c-p>		   :FloatermNew fzf<cr>
+nnoremap   <silent>   <c-b>		   :FloatermNew ranger<cr>
+let g:floaterm_gitcommit = 'vsplit'
