@@ -129,7 +129,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 # git aliases
-alias addall="git add ."
+alias ga="git add "
+alias gaa="git add ."
 alias gc="git commit -m"
 alias gs="git status"
 alias gp="git push"
