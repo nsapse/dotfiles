@@ -125,12 +125,18 @@ alias dotfiles='cd ~/.config/dotfiles'
 alias lsa="ls -a"
 alias grep="grep --color=auto"
 alias gh="history|grep"
+alias ..="cd .."
+alias ...="cd ../.."
 
 # git aliases
 alias addall="git add ."
-alias commit="git commit -m"
+alias gc="git commit -m"
 alias gs="git status"
 alias gp="git push"
+
+#pacman aliases
+alias pacIn="sudo pacman -S"
+alias pacUp="sudo pacman -Syuu"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
