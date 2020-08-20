@@ -155,4 +155,6 @@ nnoremap   <silent>   <leader>FL   :FloatermToggle<CR>
 tnoremap   <silent>   <leader>FL   <C-\><C-n>:FloatermToggle<CR>
 nnoremap   <silent>   <c-p>		   :FloatermNew fzf<cr>
 nnoremap   <silent>   <c-b>		   :FloatermNew ranger<cr>
+nnoremap   <silent>   <c-g>		   :FloatermNew lazygit<cr>
+
 let g:floaterm_gitcommit = 'vsplit'
