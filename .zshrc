@@ -8,7 +8,7 @@ export ZSH="/home/noah/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="wezm"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -139,8 +139,8 @@ alias gp="git push"
 alias lg="lazygit"
 
 #pacman aliases
-alias pacIn="sudo pacman -S"
-alias pacUp="sudo pacman -Syuu"
+alias pacS="sudo pacman -S"
+alias pacSyu="sudo pacman -Syu"
 
 #tmux aliases
 alias tat="tmux attach -t"
