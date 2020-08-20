@@ -117,6 +117,7 @@ alias bconfig="nvim ~/.config/bspwm/bspwmrc"
 alias sxconfig="nvim ~/.config/sxhkd/sxhkdrc"
 alias polyconfig="nvim ~/.config/polybar/config"
 alias tconfig="nvim ~/.tmux.conf"
+alias lzconfig="nvim ~/.config/jesseduffield/lazygit/config.yml"
 
 # aliasing directories
 alias dotfiles='cd ~/.config/dotfiles'
@@ -134,6 +135,7 @@ alias gaa="git add ."
 alias gc="git commit -m"
 alias gs="git status"
 alias gp="git push"
+alias lg="lazygit"
 
 #pacman aliases
 alias pacIn="sudo pacman -S"
