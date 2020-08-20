@@ -14,8 +14,10 @@ set nobackup
 set undodir=~/.vim/undodir'
 set undofile
 
+"This is apparently necessary for Coc definition
 set cmdheight=2
-
+set hidden
+set shortmess=aFc
 
 " Leader set to <Space>"
 
@@ -39,26 +41,39 @@ nnoremap<silent><c-H> :vertical resize -5<cr>
 nnoremap<silent><c-K> :resize -5<cr>
 nnoremap<silent><c-J> :resize +5<cr>
 
-"buffer navigation
+
+"buffer and tab navigation
 "
 nnoremap <silent> b] :bnext<cr>
 nnoremap <silent> b[ :bprevious<cr>
-nnoremap <silent> B] :bfirst<cr>
-nnoremap <silent> B[ :blast<cr>
+nnoremap <silent> B[ :bfirst<cr>
+nnoremap <silent> B] :blast<cr>
 
-"Traditional Save and Quit Bindings
+nnoremap<c-t> :tabnew<cr>
+nnoremap <silent> t] :tabnext<cr>
+nnoremap <silent> t[ :tabprevious<cr>
+nnoremap <silent> T[ :tabfirst<cr>
+nnoremap <silent> T] :tablast<cr>
+
+"Traditional (Non-Vim) Save and Quit Bindings
 map <c-s> :w<cr>
 map <c-q> :q<cr>
+
+"Quick source the current file
+map <leader><c-s> :so %<cr>
 
 "Plugged Additions"
 
 call plug#begin()
 
-Plug 'aswathkk/darkscene.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'aswathkk/darkscene.vim'
+Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
+Plug 'flazz/vim-colorschemes'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
+Plug 'joonty/vdebug'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf'
 Plug 'majutsushi/tagbar'
@@ -74,12 +89,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot' 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
-Plug 'yggdroot/indentline'
-Plug 'flazz/vim-colorschemes'
-Plug 'chiel92/vim-autoformat'
 Plug 'voldikss/vim-floaterm'
+Plug 'yggdroot/indentline'
 
 call plug#end()
 
@@ -130,7 +145,7 @@ map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 "Remapping for Undotree"
-nmap <C-u> :UndotreeToggle<cr>
+nmap <leader>U :UndotreeToggle<cr>
 
 " NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
@@ -156,5 +171,9 @@ tnoremap   <silent>   <leader>FL   <C-\><C-n>:FloatermToggle<CR>
 nnoremap   <silent>   <c-p>		   :FloatermNew fzf<cr>
 nnoremap   <silent>   <c-b>		   :FloatermNew ranger<cr>
 nnoremap   <silent>   <c-g>		   :FloatermNew lazygit<cr>
+let g:floaterm_autoclose=1	
+let g:floaterm_gitcommit='vsplit'
 
-let g:floaterm_gitcommit = 'vsplit'
+"Vim autoformat binding
+
+nnoremap <leader>AF :Autoformat<cr>

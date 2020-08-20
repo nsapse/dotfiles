@@ -121,9 +121,10 @@ alias lzconfig="nvim ~/.config/jesseduffield/lazygit/config.yml"
 
 # aliasing directories
 alias dotfiles='cd ~/.config/dotfiles'
+alias dev="cd ~/Developer"
 
 # navigation and history
-alias lsa="ls -a"
+alias lsa="ls -a -l --color=auto"
 alias grep="grep --color=auto"
 alias gh="history|grep"
 alias ..="cd .."
@@ -140,6 +141,12 @@ alias lg="lazygit"
 #pacman aliases
 alias pacIn="sudo pacman -S"
 alias pacUp="sudo pacman -Syuu"
+
+#tmux aliases
+alias tat="tmux attach -t"
+alias tls="tmux ls"
+alias tns="tmux new-session -s"
+
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
