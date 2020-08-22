@@ -72,18 +72,20 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    python
+	github
+	thefuck
     colorize
-    lein
+    git
     iterm2
+    lein
     npm
     npx
+    python
+    vi-mode
     zsh-autosuggestions
     zsh-completions
-    zsh-syntax-highlighting
-    vi-mode
     zsh-interactive-cd
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -146,9 +148,9 @@ alias pacS="sudo pacman -S"
 alias pacSyu="sudo pacman -Syu"
 
 #tmux aliases
-alias tat="tmux attach -t"
+alias ta="tmux attach -t"
 alias tls="tmux ls"
-alias tns="tmux new-session -s"
+alias ts="tmux new-session -s"
 
 
 ### ARCHIVE EXTRACTION
