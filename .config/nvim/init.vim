@@ -6,6 +6,7 @@ syntax on
 set nu
 set rnu 
 set tabstop=4 softtabstop=4
+set shiftwidth=4
 set smartindent
 set nowrap
 set smartcase
@@ -55,12 +56,13 @@ nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
 nnoremap <silent> T] :tablast<cr>
 
+nnoremap <leader>R :reg<cr>
 "Traditional (Non-Vim) Save and Quit Bindings
 map <c-s> :w<cr>
 map <c-q> :q<cr>
 
-"Quick source the current file
-map <leader><c-s> :so %<cr>
+
+map <leader><leader>S :so %<CR> 
 
 "Plugged Additions"
 
@@ -99,6 +101,9 @@ Plug 'yggdroot/indentline'
 call plug#end()
 
 colorscheme gruvbox-material
+
+
+
 
 "Remappings for CoC
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
@@ -177,4 +182,4 @@ let g:floaterm_gitcommit='vsplit'
 
 "Vim autoformat binding
 
-nnoremap <leader>AF :Autoformat<cr>
+nnoremap <leader>FF :Autoformat<cr>
