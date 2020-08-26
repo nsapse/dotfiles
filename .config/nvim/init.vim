@@ -78,6 +78,7 @@ Plug 'honza/vim-snippets'
 Plug 'joonty/vdebug'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf'
+Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
@@ -183,3 +184,8 @@ let g:floaterm_gitcommit='vsplit'
 "Vim autoformat binding
 
 nnoremap <leader>FF :Autoformat<cr>
+
+"EasyAlign Bindings
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)

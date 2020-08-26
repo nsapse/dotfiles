@@ -9,11 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:System Helvetica 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,8 +47,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-bindsym Mod1 + space exec rofi -show run
+bindsym $mod+d exec rofi -show run
+# bindsym Mod4 + space exec rofi -show run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -80,10 +80,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Control+h split h
+bindsym $mod+Control+h split v
 
 # split in vertical orientation
-bindsym $mod+Control+v split v
+bindsym $mod+Control+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -107,15 +107,15 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Terminal One"
-set $ws2 "2: Firefox: Browsing"
-set $ws3 "3: Email"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6: Terminal Two"
-set $ws7 "7: Calibre"
-set $ws8 "8: Documents"
-set $ws9 "9"
+set $ws1  "1: Terminal: One"
+set $ws2  "2: Firefox: One"
+set $ws3  "3: Email"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6: Terminal: Two"
+set $ws7  "7: Firefox: Two"
+set $ws8  "8: Documents"
+set $ws9  "9"
 set $ws10 "10: Music"
 
 # switch to workspace
@@ -144,21 +144,22 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 #binding workspaces to monitors
-workspace "1: Terminal One"      output DisplayPort-1
-workspace "2: Firefox: Browsing" output DisplayPort-1
-workspace "3: Email"			 output DisplayPort-1
-workspace "4"                    output DisplayPort-1
-workspace "5"                    output DisplayPort-1
-workspace "6: Terminal Two"		 output HDMI-A-1
-workspace "7: Calibre"      	 output HDMI-A-1
-workspace "8: Documents: Reading"         output HDMI-A-1
-workspace "9"					 output HDMI-A-1
-workspace  "10: Music"      	 output HDMI-A-1
+workspace "1: Terminal: One" output DisplayPort-1
+workspace "2: Firefox: One" output DisplayPort-1
+workspace "3: Email"        output DisplayPort-1
+workspace "4"               output DisplayPort-1
+workspace "5"               output DisplayPort-1
+workspace "6: Terminal: Two" output HDMI-A-1
+workspace "7: Firefox: Two" output HDMI-A-1
+workspace "8: Documents"    output HDMI-A-1
+workspace "9"               output HDMI-A-1
+workspace "10: Music"       output HDMI-A-1
 
 # binding programs to their associated named workspaces
 
 assign [class="strawberry"] $ws10
-
+assign [class="calibre"] $ws7
+assign [class="okular"] $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -196,9 +197,9 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+ bar {
+		 status_command i3blocks -c ~/.config/i3/i3blocks.conf
+ }
 
 # >>> Plasma Integration <<<
 
@@ -244,3 +245,5 @@ no_focus [class="plasmashell" window_type="notification"]
 no_focus [class="plasmashell" window_type="on_screen_display"]
 
 exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 1080x480 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 1920x1080 --pos 0x0 --rotate left --output DVI-D-0 --off
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
