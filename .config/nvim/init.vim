@@ -5,7 +5,8 @@ syntax on
 " vim paramaters 
 set nu
 set rnu 
-set tabstop=4 softtabstop=4
+set termguicolors
+set tabstop=4 softtabstop=4 expandtab
 set shiftwidth=4
 set smartindent
 set nowrap
@@ -62,7 +63,7 @@ map <c-s> :w<cr>
 map <c-q> :q<cr>
 
 
-map <leader><leader>S :so %<CR> 
+map <leader><c-s> :so %<CR> 
 
 "Plugged Additions"
 
