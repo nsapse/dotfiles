@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -11,8 +18,8 @@ export ZSH="/home/noah/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
+POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -114,31 +121,50 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # access config files
-alias zconfig="nvim ~/.zshrc"
-alias zsource="source ~/.zshrc"
-alias nconfig="nvim ~/.config/nvim/init.vim"
-alias xconfig="nvim ~/.xinitrc"
-alias bconfig="nvim ~/.config/bspwm/bspwmrc"
-alias sxconfig="nvim ~/.config/sxhkd/sxhkdrc"
-alias polyconfig="nvim ~/.config/polybar/config"
-alias tconfig="nvim ~/.tmux.conf"
-alias lzconfig="nvim ~/.config/jesseduffield/lazygit/config.yml"
+alias zconf="nvim ~/.zshrc"
+alias zso="source ~/.zshrc"
+alias nconf="nvim ~/.config/nvim/init.vim"
+alias xconf="nvim ~/.xinitrc"
+alias bconf="nvim ~/.config/bspwm/bspwmrc"
+alias sxconf="nvim ~/.config/sxhkd/sxhkdrc"
+alias polyconf="nvim ~/.config/polybar/config"
+alias tconf="nvim ~/.tmux.conf"
+alias lzconf="nvim ~/.config/jesseduffield/lazygit/config.yml"
+alias PLconf="nvim ~/.p10k.zsh"
+alias iconf="nvim ~/.config/i3/config"
+
 
 # aliasing directories
 alias dotfiles='cd ~/.config/dotfiles'
 alias dev="cd ~/Developer"
+alias devC="cd ~/Developer/c_programming"
+alias conf="cd ~/.config"
+alias keebs="cd ~/Developer/keyboards"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
+alias lst='tree -C'
 alias grep="grep --color=auto"
 alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 
+mcd(){
+mkdir $1 && cd $1
+}
+
+#nvim related aliasing and functions
+nt(){
+touch $1 && nvim $1
+}
+
+alias nv="nvim"
+
 # git aliases
 alias ga="git add "
 alias gaa="git add ."
 alias gc="git commit -m"
+alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
@@ -151,7 +177,9 @@ alias pacSyu="sudo pacman -Syu"
 alias ta="tmux attach -t"
 alias tls="tmux ls"
 alias ts="tmux new-session -s"
+alias tk="tmux kill-session -t"
 
+#gcc aliases 
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
@@ -181,3 +209,6 @@ ex ()
 }
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
