@@ -148,7 +148,7 @@ alias grep="grep --color=auto"
 alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
-
+alias chx="chmod +x"
 mcd(){
 mkdir $1 && cd $1
 }
