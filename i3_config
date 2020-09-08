@@ -120,8 +120,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1  "1: Terminal: One"
-set $ws2  "2: Firefox: One"
+set $ws1  "1: Browser"
+set $ws2  "2: Terminal"
 set $ws3  "3:"
 set $ws4  "4"
 set $ws5  "5"
@@ -157,13 +157,13 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 
 #binding workspaces to monitors
-workspace       "1: Terminal: One" output DisplayPort-1
-workspace        "2: Firefox: One" output DisplayPort-1
+workspace             "1: Browser" output DisplayPort-1
+workspace            "2: Terminal" output DisplayPort-1
 workspace                     "3:" output DisplayPort-1
 workspace                      "4" output DisplayPort-1
 workspace                      "5" output DisplayPort-1
 workspace                     "6:" output DisplayPort-1
-workspace                     "7:" output DisplayPort-1
+workspace                     "7:" output      HDMI-A-1
 workspace               "8: Email" output      HDMI-A-1
 workspace "9: Documents / Calibre" output      HDMI-A-1
 workspace              "10: Music" output      HDMI-A-1
@@ -173,6 +173,8 @@ workspace              "10: Music" output      HDMI-A-1
 assign [class="strawberry"] $ws10
 assign [class="calibre"] $ws9
 assign [class="okular"] $ws9
+
+# assign default stacking to windows
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -260,7 +262,7 @@ no_focus [class="plasmashell" window_type="on_screen_display"]
 exec_always xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 1080x480 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 1920x1080 --pos 0x0 --rotate left --output DVI-D-0 --off
 exec_always picom
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always feh --bg-scale /home/noah/Pictures/wallpapers/blade_runner_japan.jpg
+exec_always feh --bg-scale /home/noah/Pictures/wallpapers/82064977_p0.jpg
 #
 # swap caps lock and escape
 exec_always --no-startup-id xmodmap -e "clear lock"
