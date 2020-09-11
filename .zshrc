@@ -127,10 +127,10 @@ alias nconf="nvim ~/.config/nvim/init.vim"
 alias xconf="nvim ~/.xinitrc"
 alias bconf="nvim ~/.config/bspwm/bspwmrc"
 alias sxconf="nvim ~/.config/sxhkd/sxhkdrc"
-alias polyconf="nvim ~/.config/polybar/config"
+alias pbconf="nvim ~/.config/polybar/config"
 alias tconf="nvim ~/.tmux.conf"
 alias lzconf="nvim ~/.config/jesseduffield/lazygit/config.yml"
-alias PLconf="nvim ~/.p10k.zsh"
+alias plconf="nvim ~/.p10k.zsh"
 alias iconf="nvim ~/.config/i3/config"
 
 
@@ -168,6 +168,7 @@ alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
+alias nct="netctl"
 
 #pacman aliases
 alias pacS="sudo pacman -S"
