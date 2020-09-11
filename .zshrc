@@ -135,7 +135,7 @@ alias iconf="nvim ~/.config/i3/config"
 
 
 # aliasing directories
-alias dotfiles='cd ~/.config/dotfiles'
+alias cdf='cd ~/.config/dotfiles'
 alias dev="cd ~/Developer"
 alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
