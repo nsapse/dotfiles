@@ -13,7 +13,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir'
+set undodir=~/.vim/undodir
 set undofile
 
 "This is apparently necessary for Coc definition
