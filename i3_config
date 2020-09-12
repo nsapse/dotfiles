@@ -25,7 +25,7 @@ gaps outer 1
 smart_borders on
 #smart_borders no_gaps
 
-set $focused-color       #8d9191 
+set $focused-color       #808080
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #454545
 set $text-color          #f3f4f5
