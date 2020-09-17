@@ -14,7 +14,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco Display 16 
+font pango:System San Francisco Display 14
 
 # set gaps
 ##### i3-gaps ##############
@@ -25,7 +25,7 @@ gaps outer 1
 smart_borders on
 #smart_borders no_gaps
 
-set $focused-color       #808080
+set $focused-color       #ffffff
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #454545
 set $text-color          #f3f4f5
@@ -39,7 +39,7 @@ client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-co
 client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #888888
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #888888
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 
 # bar
 bar {
@@ -88,7 +88,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec rofi -show run -lines 9 -eh 2 -width 100 -padding 800 -opacity "85 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18" -fullscreen -f
-bindsym $mod+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" --font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "#9575cd" --font "System San Francisco Display 18"
 
 # start file manager
 
@@ -206,6 +206,7 @@ workspace $ws10 output HDMI-A-1
 assign [class="strawberry"] $ws10
 assign [class="calibre"] $ws9
 assign [class="okular"] $ws9
+assign [class="Mailspring"] $ws8
 
 # assign default stacking to windows
 
@@ -298,4 +299,5 @@ no_focus [class="plasmashell" window_type="on_screen_display"]
 exec --no-startup-id xmodmap -e "clear lock"
 exec --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
-
+exec mailspring
+exec calibre
