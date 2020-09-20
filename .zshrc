@@ -132,6 +132,8 @@ alias tconf="nvim ~/.tmux.conf"
 alias lzconf="nvim ~/.config/jesseduffield/lazygit/config.yml"
 alias plconf="nvim ~/.p10k.zsh"
 alias iconf="nvim ~/.config/i3/config"
+alias piconf="nvim ~/.config/picom.conf"
+
 
 
 # aliasing directories
@@ -140,6 +142,7 @@ alias dev="cd ~/Developer"
 alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
 alias keebs="cd ~/Developer/keyboards"
+alias wallpaper="cd ~/Pictures/wallpapers"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
