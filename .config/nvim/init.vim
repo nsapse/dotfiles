@@ -99,6 +99,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview'
 
 call plug#end()
 
@@ -190,3 +192,6 @@ nnoremap <leader>FF :Autoformat<cr>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+"Vim-LaTex Settings
+let g:tex_flavor = 'latex'

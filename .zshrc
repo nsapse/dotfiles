@@ -143,6 +143,7 @@ alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
 alias keebs="cd ~/Developer/keyboards"
 alias wallpaper="cd ~/Pictures/wallpapers"
+alias OSU="cd ~/Developer/OSU"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
