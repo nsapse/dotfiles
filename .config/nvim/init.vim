@@ -195,3 +195,4 @@ nmap ga <Plug>(EasyAlign)
 
 "Vim-LaTex Settings
 let g:tex_flavor = 'latex'
+nnoremap <leader>L :LLPStartPreview<CR>
