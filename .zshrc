@@ -80,7 +80,6 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	github
-	thefuck
     colorize
     git
     iterm2
@@ -137,7 +136,7 @@ alias piconf="nvim ~/.config/picom.conf"
 
 
 # aliasing directories
-alias cdf='cd ~/.config/dotfiles'
+alias cdf='cd ~/Developer/dotfiles'
 alias dev="cd ~/Developer"
 alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
