@@ -101,6 +101,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'yggdroot/indentline'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
+Plug 'konfekt/vim-office'
 
 call plug#end()
 
@@ -205,3 +206,6 @@ nmap ga <Plug>(EasyAlign)
 "Vim-LaTex Settings
 let g:tex_flavor = 'latex'
 nnoremap <leader>L :LLPStartPreview<CR>
+
+" Add MASM highlighting
+let g:asmsytax = 'masm'
