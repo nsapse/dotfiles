@@ -177,8 +177,8 @@ bindsym $mod+d exec rofi-appsmenu
 
 # Setup Rofi-Menu Mods 
 #bindsym $mod+d exec --no-startup-id rofi-appsmenu
-#bindsym $mod+n exec --no-startup-id rofi-network
-#bindsym $mod+p exec --no-startup-id rofi-power
+bindsym $mod+n exec --no-startup-id rofi-network
+bindsym $mod+p exec --no-startup-id rofi-power
 
 ##############################################
 #           Random Launcher Bindings         #

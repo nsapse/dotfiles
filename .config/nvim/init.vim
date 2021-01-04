@@ -9,7 +9,6 @@ set termguicolors
 set tabstop=4 softtabstop=4 expandtab
 set shiftwidth=4
 set smartindent
-set nowrap
 set smartcase
 set noswapfile
 set nobackup
@@ -102,6 +101,7 @@ Plug 'yggdroot/indentline'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'konfekt/vim-office'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -209,3 +209,6 @@ nnoremap <leader>L :LLPStartPreview<CR>
 
 " Add MASM highlighting
 let g:asmsytax = 'masm'
+
+" VSCode Mappings for Vimspector
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
