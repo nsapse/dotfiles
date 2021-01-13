@@ -203,8 +203,12 @@ nnoremap <leader>L :LLPStartPreview<CR>
 " Add MASM highlighting
 let g:asmsytax = 'masm'
 
-" VSCode Mappings for Vimspector
+" VSCode Mappings for Vimspector  etc
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+nnoremap <silent><leader>dr :VimspectorReset<CR>
+vnoremap <silent><leader>dr :VimspectorReset<CR>
+inoremap <silent><leader>dr :VimspectorReset<CR>
+
 
 " Emmet Mappings
 let g:user_emmet_install_global = 0
@@ -214,3 +218,4 @@ autocmd FileType html,css EmmetInstall
 nnoremap <silent><leader>M :MaximizerToggle<CR>
 vnoremap <silent><leader>M :MaximizerToggle<CR>gv
 inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
+
