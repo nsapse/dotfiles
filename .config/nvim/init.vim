@@ -102,6 +102,9 @@ Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
 Plug 'konfekt/vim-office'
 Plug 'puremourning/vimspector'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-repeat'
+Plug 'szw/vim-maximizer'
 
 call plug#end()
 
@@ -212,3 +215,12 @@ let g:asmsytax = 'masm'
 
 " VSCode Mappings for Vimspector
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
+" Emmet Mappings
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" Vim Maximizer Mapppings
+nnoremap <silent><leader>M :MaximizerToggle<CR>
+vnoremap <silent><leader>M :MaximizerToggle<CR>gv
+inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
