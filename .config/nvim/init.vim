@@ -14,6 +14,7 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
+set showmatch
 
 "This is apparently necessary for Coc definition
 set cmdheight=2
@@ -35,7 +36,7 @@ nnoremap<silent><leader>l :wincmd l<cr>
 nnoremap<silent><leader>t :wincmd t<cr>
 
 nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
-map <leader><leader>n :nohlsearch<cr>
+map <silent><leader><leader>n :nohlsearch<cr>
 
 nnoremap<silent><c-L> :vertical resize +5<cr>
 nnoremap<silent><c-H> :vertical resize -5<cr>
@@ -72,35 +73,38 @@ Plug 'airblade/vim-gitgutter'
 Plug 'aswathkk/darkscene.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
+Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'othree/html5.vim'
+Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot' 
+Plug 'szw/vim-maximizer'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
-Plug 'puremourning/vimspector'
-Plug 'mattn/emmet-vim'
-Plug 'szw/vim-maximizer'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
 colorscheme gruvbox-material
-
-
 
 
 "Remappings for CoC
@@ -139,6 +143,8 @@ nmap <leader>rr <Plug>(coc-rename)
 
 "mappings for Coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 
 "mappings for Coc-actions
 "
@@ -156,6 +162,8 @@ map <silent><C-n> :NERDTreeToggle<CR>
 " <Leader>f{char} to move to {char} 
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree"
 nmap <leader>U :UndotreeToggle<cr>
@@ -179,13 +187,13 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap<silent><leader>? <Plug>(pydocstring)
 
 "FloatTerm Bindings and Settings
-nnoremap   <silent>   <leader>FL   :FloatermToggle<CR>
-tnoremap   <silent>   <leader>FL   <C-\><C-n>:FloatermToggle<CR>
-nnoremap   <silent>   <c-p>		   :FloatermNew fzf<cr>
-nnoremap   <silent>   <c-b>		   :FloatermNew ranger<cr>
-nnoremap   <silent>   <c-g>		   :FloatermNew lazygit<cr>
-let g:floaterm_autoclose=1	
-let g:floaterm_gitcommit='vsplit'
+nnoremap <silent> <leader>FL :FloatermToggle<CR>
+tnoremap <silent> <leader>FL <C-\><C-n>:FloatermToggle<CR>
+nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
+nnoremap <silent> <c-b>      :FloatermNew ranger<cr>
+nnoremap <silent> <c-g>      :FloatermNew lazygit<cr>
+let      g:floaterm_autoclose=1
+let      g:floaterm_gitcommit='vsplit'
 
 "Vim autoformat binding
 
@@ -195,6 +203,7 @@ nnoremap <leader>FF :Autoformat<cr>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+noremap <leader><leader>A :EasyAlign
 
 "Vim-LaTex Settings
 let g:tex_flavor = 'latex'
@@ -207,7 +216,6 @@ let g:asmsytax = 'masm'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
-inoremap <silent><leader>dr :VimspectorReset<CR>
 
 
 " Emmet Mappings

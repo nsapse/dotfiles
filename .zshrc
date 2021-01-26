@@ -132,6 +132,7 @@ alias lzconf="nvim ~/.config/jesseduffield/lazygit/config.yml"
 alias plconf="nvim ~/.p10k.zsh"
 alias iconf="nvim ~/.config/i3/config"
 alias piconf="nvim ~/.config/picom.conf"
+alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
 
 
 
@@ -184,6 +185,9 @@ alias ts="tmux new-session -s"
 alias tk="tmux kill-session -t"
 
 #gcc aliases 
+
+#python aliases
+alias py="python"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
