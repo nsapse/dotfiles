@@ -143,7 +143,7 @@ alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
 alias keebs="cd ~/Developer/keyboards"
 alias wallpaper="cd ~/Pictures/wallpapers"
-alias OSU="cd ~/Developer/OSU"
+alias osu="cd ~/Developer/OSU"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
@@ -153,7 +153,7 @@ alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 alias chx="chmod +x"
-mcd(){
+mkcd(){
 mkdir $1 && cd $1
 }
 

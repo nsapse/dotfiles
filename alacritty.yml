@@ -22,7 +22,7 @@ scrolling:
   auto_scroll: false
 
 key_bindings:
-  - { key: J,        mods: Shift,   action: ScrollPageUp   }
-  - { key: K,        mods: Shift,   action: ScrollPageDown }
+  - { key: Up,       action: ScrollPageUp   }
+  - { key: Down,     action: ScrollPageDown }
   - { key: End,      mods: Shift,   action: ScrollToBottom }
   - { key: Home,     mods: Shift,   action: ScrollToTop    }

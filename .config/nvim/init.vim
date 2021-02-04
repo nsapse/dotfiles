@@ -101,6 +101,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'pangloss/vim-javascript'
+Plug 'makerj/vim-pdf)'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 call plug#end()
 
