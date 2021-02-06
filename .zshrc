@@ -183,6 +183,7 @@ alias ta="tmux attach -t"
 alias tls="tmux ls"
 alias ts="tmux new-session -s"
 alias tk="tmux kill-session -t"
+alias tm="tmux"
 
 #gcc aliases 
 
