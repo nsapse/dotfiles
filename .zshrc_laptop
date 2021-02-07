@@ -81,8 +81,9 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 plugins=(
 	github
     colorize
+    colored-man-pages
+    battery
     git
-    iterm2
     lein
     npm
     npx
@@ -152,7 +153,7 @@ alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 alias chx="chmod +x"
-mkcd(){
+mcd(){
 mkdir $1 && cd $1
 }
 
@@ -170,6 +171,7 @@ alias gc="git commit -m"
 alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
+alias glg="git log --all --decorate --graph"
 alias lg="lazygit"
 alias nct="netctl"
 

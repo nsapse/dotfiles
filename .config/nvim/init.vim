@@ -51,7 +51,6 @@ nnoremap <silent> b[ :bprevious<cr>
 nnoremap <silent> B[ :bfirst<cr>
 nnoremap <silent> B] :blast<cr>
 
-nnoremap<c-t> :tabnew<cr>
 nnoremap <silent> t] :tabnext<cr>
 nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
@@ -178,7 +177,7 @@ vmap <C-_> <Leader>c<Space>
 "nnoremap <c-p> :FZF<cr>
 
 "Tagbar Settings
-nnoremap <Leader>T :TagbarToggle<cr>
+nnoremap<c-t> :TagbarToggle<cr>
 
 "vim-airline settings
 

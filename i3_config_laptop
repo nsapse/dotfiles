@@ -14,6 +14,9 @@ exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# an attempt to get brightness working
+bindsym XF86MonBrightnessUp exec "xbacklight + 5"
+bindsym XF86MonBrightnessDown exec "xbacklight - 5"
 #--no-startup-id 
 #--no-startup-id 
 #--no-startup-id 
@@ -173,7 +176,7 @@ bindsym $mod+Shift+q kill
 
 # Working Modified Rofi Call
 #bindsym $mod+d exec rofi -show drun 
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show run -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "#9575cd" --font "System San Francisco Display 18"
 bindsym $mod+Shift+d exec rofi -show drun -f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "#9575cd" --font "System San Francisco Display 18"
 
 # Setup Rofi-Menu Mods 
@@ -186,7 +189,7 @@ bindsym $mod+p exec --no-startup-id rofi-power
 ##############################################
 
 # start file manager 
-bindsym $mod+b exec dolphin
+bindsym $mod+b exec alacritty -e ranger
 
 #Launch Strawberry
 bindsym $mod+Control+0 exec strawberry
@@ -309,13 +312,13 @@ workspace $ws10 output HDMI-A-1
 
 # binding programs to their associated named workspaces
 
-assign [class="strawberry"] $ws10
-assign [class="calibre"] $ws9
-assign [class="okular"] $ws9
-#assign [class="Mailspring"] $ws8
-assign [class="Slack"] $ws8
-assign [class="VirtualBox Manager"] $ws4
-#assign [class="TeXstudio"] $ws2
+#assign [class="strawberry"] $ws10
+#assign [class="calibre"] $ws9
+#assign [class="okular"] $ws9
+##assign [class="Mailspring"] $ws8
+#assign [class="Slack"] $ws8
+#assign [class="VirtualBox Manager"] $ws4
+##assign [class="TeXstudio"] $ws2
 
 # assign default stacking to windows
 

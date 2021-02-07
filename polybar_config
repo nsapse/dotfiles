@@ -33,7 +33,7 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+radius = 10
 fixed-center = false
 
 background = ${colors.background}
@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan  battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -208,7 +208,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = %percentage:2%%
+label = CPU:%percentage:2%%
 
 [module/memory]
 type = internal/memory
@@ -216,7 +216,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = RAM:%percentage_used%%
 
 [module/wlan]
 type = internal/network
