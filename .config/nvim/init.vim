@@ -51,7 +51,6 @@ nnoremap <silent> b[ :bprevious<cr>
 nnoremap <silent> B[ :bfirst<cr>
 nnoremap <silent> B] :blast<cr>
 
-nnoremap<c-t> :tabnew<cr>
 nnoremap <silent> t] :tabnext<cr>
 nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
@@ -184,7 +183,7 @@ vmap <C-_> <Leader>c<Space>
 "nnoremap <c-p> :FZF<cr>
 
 "Tagbar Settings
-nnoremap <Leader>T :TagbarToggle<cr>
+nnoremap<c-t> :TagbarToggle<cr>
 
 "vim-airline settings
 
@@ -225,10 +224,23 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
 
+" remap watch command to be shorter
+cnoreabbrev vsw VimspectorWatch
+
+nmap <leader>W :VimspectorWatch <C-R>0
+vmap <leader>W :VimspectorWatch <C-R>0
+
+nmap <leader>b <plug>VimspectorToggleBreakpoint
+vmap <leader>b <plug>VmspectorToggleBreakpoint
+"imap <leader>b <plug>VimspectorToggleBreakpoint
+
+nmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+vmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+"imap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+
 
 " Emmet Mappings
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType .html,.css EmmetInstall
 
 " Vim Maximizer Mapppings
 nnoremap <silent><leader>M :MaximizerToggle<CR>
