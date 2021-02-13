@@ -105,11 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -140,6 +140,7 @@ alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
 
 # aliasing directories
 alias cdf='cd ~/dotfiles'
+alias dev="cd ~/Developer"
 alias devC="cd ~/Developer/c_programming"
 alias conf="cd ~/.config"
 alias wallpaper="cd ~/Pictures/wallpapers"
@@ -171,7 +172,7 @@ alias gc="git commit -m"
 alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
-alias glg="git log --all --decorate --graph"
+alias glg="git log --all --decorate --oneline --graph"
 alias lg="lazygit"
 alias nct="netctl"
 
@@ -192,6 +193,10 @@ alias py="python"
 
 # bindkey for hstr
 alias HS="hstr"
+
+# rust aliases
+
+alias rbook="rustup docs --book"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>

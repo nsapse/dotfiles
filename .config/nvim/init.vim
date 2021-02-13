@@ -218,10 +218,11 @@ let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
 
+" remap watch command to be shorter
+cnoreabbrev vsw VimspectorWatch
 
 " Emmet Mappings
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType .html,.css EmmetInstall
 
 " Vim Maximizer Mapppings
 nnoremap <silent><leader>M :MaximizerToggle<CR>

@@ -17,11 +17,11 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = ${xrdb:color0:#222}
+;background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -51,13 +51,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
+font-1 = Monokai:fontformat=truetype:size=12:antialias=false;0
+font-2 = Monokai:pixelsize=12;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan  battery temperature date powermenu
+modules-right = xbacklight wlan  pulseaudio memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -263,7 +263,7 @@ interval = 5
 date =
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = %I:%M %p 
 time-alt = %H:%M:%S
 
 format-prefix = 
