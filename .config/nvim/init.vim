@@ -220,8 +220,19 @@ vnoremap <silent><leader>dr :VimspectorReset<CR>
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
-nnoremap <leader>W :VimspectorWatch <C-R>0<CR>
-vnoremap <leader>W :VimspectorWatch <C-R>0<CR>
+
+nmap <leader>W :VimspectorWatch <C-R>0
+vmap <leader>W :VimspectorWatch <C-R>0
+
+nmap <leader>b <plug>VimspectorToggleBreakpoint
+vmap <leader>b <plug>VimspectorToggleBreakpoint
+imap <leader>b <plug>VimspectorToggleBreakpoint
+
+nmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+vmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+imap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+
+
 " Emmet Mappings
 autocmd FileType .html,.css EmmetInstall
 
