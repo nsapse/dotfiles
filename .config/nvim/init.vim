@@ -59,8 +59,8 @@ nnoremap <silent> T] :tablast<cr>
 
 nnoremap <leader>R :reg<cr>
 "Traditional (Non-Vim) Save and Quit Bindings
-map <c-s> :w<cr>
-map <c-q> :q<cr>
+map <c-s> :wa<cr>
+map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
@@ -127,6 +127,11 @@ endfunction
 
 let g:coc_snippet_next = '<c-j>' 
 let g:coc_snippet_prev = '<c-k>'
+
+" Allow formatting using coc-prettier
+vmap <leader>FF  <Plug>(coc-format-selected)
+nmap <leader>FF  <Plug>(coc-format-selected)
+
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm. " <cr>
