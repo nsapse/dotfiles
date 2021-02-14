@@ -16,8 +16,8 @@ exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # an attempt to get brightness working
-bindsym XF86MonBrightnessUp exec "xbacklight + 5"
-bindsym XF86MonBrightnessDown exec "xbacklight - 5"
+bindsym XF86MonBrightnessUp exec "light -A 5"
+bindsym XF86MonBrightnessDown exec "light -U 5"
 #--no-startup-id 
 #--no-startup-id 
 #--no-startup-id 
