@@ -8,6 +8,8 @@ set rnu
 set termguicolors
 set tabstop=4 softtabstop=4 expandtab
 set shiftwidth=4
+set nohlsearch
+set incsearch
 set smartindent
 set smartcase
 set noswapfile
@@ -68,7 +70,7 @@ map <leader><c-s> :so %<CR>
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'aswathkk/darkscene.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
