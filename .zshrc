@@ -144,6 +144,8 @@ alias conf="cd ~/.config"
 alias keebs="cd ~/Developer/keyboards"
 alias wallpaper="cd ~/Pictures/wallpapers"
 alias osu="cd ~/Developer/OSU"
+alias o290="cd ~/Developer/OSU/CS-290"
+alias o261="cd ~/Developer/OSU/-290"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
@@ -153,7 +155,7 @@ alias gh="history|grep"
 alias ..="cd .."
 alias ...="cd ../.."
 alias chx="chmod +x"
-mkcd(){
+mcd(){
 mkdir $1 && cd $1
 }
 
@@ -189,6 +191,12 @@ alias tm="tmux"
 
 #python aliases
 alias py="python"
+
+#fzf stuff
+alias FF="fzf"
+alias NF='nvim $(fzf)'
+
+# various command aliases
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>

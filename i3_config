@@ -197,6 +197,7 @@ bindsym $mod+Shift+i exec rofi-network
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec konsole
 
 #bindsym $mod+b exec alacritty -e ranger
 

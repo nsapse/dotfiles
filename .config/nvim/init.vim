@@ -9,7 +9,6 @@ set termguicolors
 set tabstop=4 softtabstop=4 expandtab
 set shiftwidth=4
 set nohlsearch
-set incsearch
 set smartindent
 set smartcase
 set noswapfile
@@ -68,9 +67,15 @@ map <leader><c-s> :so %<CR>
 
 "Plugged Additions"
 
+" mappings
+cnoreabbrev PI PlugInstall
+cnoreabbrev PC PlugClean
+
+" actual plugins
+
 call plug#begin()
 
-"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'aswathkk/darkscene.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
@@ -81,12 +86,15 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
+Plug 'makerj/vim-pdf)'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'puremourning/vimspector'
 Plug 'raimondi/delimitmate'
 Plug 'ryanoasis/vim-devicons'
@@ -102,10 +110,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
-Plug 'pangloss/vim-javascript'
-Plug 'makerj/vim-pdf)'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 call plug#end()
 
 colorscheme gruvbox-material
@@ -149,7 +155,8 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>rr <Plug>(coc-rename)
-
+cnoreabbrev CM CocList marketplace
+ 
 "mappings for Coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<c-j>'
@@ -249,3 +256,5 @@ nnoremap <silent><leader>M :MaximizerToggle<CR>
 vnoremap <silent><leader>M :MaximizerToggle<CR>gv
 inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
 
+" Mustache Abbrevs
+let g:mustache_abbreviations = 1
