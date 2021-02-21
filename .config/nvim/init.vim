@@ -64,6 +64,7 @@ map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
+cnoreabbrev vconf ~/.config/nvim/init.vim
 
 "Plugged Additions"
 
@@ -75,8 +76,7 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
-Plug 'aswathkk/darkscene.vim'
+
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
@@ -232,6 +232,7 @@ let g:asmsytax = 'masm'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
+nnoremap <silent><leader>t :call vimspector#ToggleBreakpoint()<CR>
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
