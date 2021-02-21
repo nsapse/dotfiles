@@ -112,6 +112,8 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+Plug 'frazrepo/vim-rainbow'
+Plug 'yggdroot/indentline'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -259,3 +261,6 @@ inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
 
 " Mustache Abbrevs
 let g:mustache_abbreviations = 1
+
+" vim rainbow
+let g:rainbow_active = 1 
