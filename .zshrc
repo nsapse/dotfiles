@@ -145,6 +145,7 @@ alias wallpaper="cd ~/Pictures/wallpapers"
 alias osu="cd ~/Developer/OSU"
 alias o290="cd ~/Developer/OSU/CS-290"
 alias o261="cd ~/Developer/OSU/CS-261"
+alias scions="cd ~/Developer/scion_site/scion-exchange"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"

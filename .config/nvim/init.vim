@@ -59,7 +59,7 @@ nnoremap <silent> T] :tablast<cr>
 
 nnoremap <leader>R :reg<cr>
 "Traditional (Non-Vim) Save and Quit Bindings
-map <c-s> :wa<cr>
+nnoremap <c-s> :wa<cr>
 map <c-q> :qa<cr>
 
 
@@ -112,8 +112,9 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'frazrepo/vim-rainbow'
+"Plug 'frazrepo/vim-rainbow'
 Plug 'yggdroot/indentline'
+Plug 'simnalamburt/vim-mundo'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -184,7 +185,7 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree"
-nmap <leader>U :UndotreeToggle<cr>
+"nmap <leader>U :UndotreeToggle<cr>
 
 " NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
@@ -234,10 +235,14 @@ let g:asmsytax = 'masm'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
-nnoremap <silent><leader>t :call vimspector#ToggleBreakpoint()<CR>
+nmap <leader>t <Plug>VimspectorToggleBreakpoint
+nmap <leader>tt <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>T :call vimspector#ClearBreakpoints()<CR>
+nmap <leader>drc  <Plug>VimspectorRunToCursor
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
+cnoreabbrev SS str(self)
 
 nmap <leader>W :VimspectorWatch <C-R>0
 vmap <leader>W :VimspectorWatch <C-R>0
@@ -264,3 +269,7 @@ let g:mustache_abbreviations = 1
 
 " vim rainbow
 let g:rainbow_active = 1 
+
+"Vim-Mundo Mappings
+nnoremap <leader><leader>u :MundoToggle<cr>
+
