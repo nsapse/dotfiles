@@ -76,9 +76,8 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
-Plug 'metakirby5/codi.vim'
-Plug 'chiel92/vim-autoformat'
 Plug 'airblade/vim-rooter'
+Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
@@ -86,11 +85,16 @@ Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'machakann/vim-sandwich'
 Plug 'majutsushi/tagbar'
+Plug 'markonm/traces.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
+Plug 'metakirby5/codi.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -104,7 +108,9 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot' 
+Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -113,11 +119,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'yggdroot/indentline'
-Plug 'simnalamburt/vim-mundo'
-Plug 'junegunn/goyo.vim'
+
 call plug#end()
 
 colorscheme gruvbox-material
