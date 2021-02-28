@@ -177,7 +177,15 @@ alias gC="git clone"
 alias gs="git status"
 alias gp="git push"
 alias lg="lazygit"
+
+#system aliases
 alias nct="netctl"
+
+# service aliases
+alias sct="systemctl"
+alias scts="systemctl start"
+alias scte="systemctl enable"
+alias smdb="systemctl enable mariadb.service"
 
 #pacman aliases
 alias pacS="sudo pacman -S"

@@ -87,6 +87,7 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/limelight.vim'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
@@ -119,7 +120,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'junegunn/goyo.vim'
 call plug#end()
 
-colorscheme zenburn
+colorscheme gruvbox-material
 
 
 "Remappings for CoC
@@ -293,11 +294,11 @@ let g:fzf_action = {
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-map <C-f> :Files<CR>
-map <leader>B :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>T :Tags<CR>
-nnoremap <leader>L :Lines<CR>
+map <leader><leader>f :Files<CR>
+map <leader><leader>b :Buffers<CR>
+nnoremap <leader><leader>g :Rg<CR>
+nnoremap <leader><leader>t :Tags<CR>
+nnoremap <leader><leader>l :Lines<CR>
 
 
 let g:fzf_tags_command = 'ctags -R'
@@ -311,8 +312,33 @@ set rtp+=~/.vim/bundle/fzf
 
 "Goyo and Limelight Mapings
 map <silent><leader>z :Goyo<cr>
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 2
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 "Autostart Rainbow Parens
-
 
 
