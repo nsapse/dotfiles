@@ -59,11 +59,12 @@ nnoremap <silent> T] :tablast<cr>
 
 nnoremap <leader>R :reg<cr>
 "Traditional (Non-Vim) Save and Quit Bindings
-map <c-s> :wa<cr>
+nnoremap <c-s> :wa<cr>
 map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
+cnoreabbrev vconf ~/.config/nvim/init.vim
 
 "Plugged Additions"
 
@@ -75,18 +76,18 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
-Plug 'aswathkk/darkscene.vim'
+
 Plug 'chiel92/vim-autoformat'
+Plug 'airblade/vim-rooter'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
-Plug 'makerj/vim-pdf)'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
@@ -112,6 +113,9 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+"Plug 'frazrepo/vim-rainbow'
+Plug 'yggdroot/indentline'
+Plug 'simnalamburt/vim-mundo'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -182,7 +186,7 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree"
-nmap <leader>U :UndotreeToggle<cr>
+"nmap <leader>U :UndotreeToggle<cr>
 
 " NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
@@ -205,7 +209,7 @@ nnoremap<silent><leader>? <Plug>(pydocstring)
 "FloatTerm Bindings and Settings
 nnoremap <silent> <leader>FL :FloatermToggle<CR>
 tnoremap <silent> <leader>FL <C-\><C-n>:FloatermToggle<CR>
-nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
+"nnoremap <silent> <c-p>      :FloatermNew fzf<cr>
 nnoremap <silent> <c-b>      :FloatermNew ranger<cr>
 nnoremap <silent> <c-g>      :FloatermNew lazygit<cr>
 let      g:floaterm_autoclose=1
@@ -232,15 +236,19 @@ let g:asmsytax = 'masm'
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
+nmap <leader>b <Plug>VimspectorToggleBreakpoint
+vmap <leader>b <plug>VmspectorToggleBreakpoint
+nmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>B :call vimspector#ClearBreakpoints()<CR>
+nmap <leader>drc  <Plug>VimspectorRunToCursor
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
+cnoreabbrev SS str(self)
 
 nmap <leader>W :VimspectorWatch <C-R>0
 vmap <leader>W :VimspectorWatch <C-R>0
 
-nmap <leader>b <plug>VimspectorToggleBreakpoint
-vmap <leader>b <plug>VmspectorToggleBreakpoint
 "imap <leader>b <plug>VimspectorToggleBreakpoint
 
 nmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
@@ -258,3 +266,44 @@ inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
 
 " Mustache Abbrevs
 let g:mustache_abbreviations = 1
+
+" vim rainbow
+let g:rainbow_active = 1 
+
+"Vim-Mundo Mappings
+nnoremap <leader><leader>u :MundoToggle<cr>
+
+"fzf bindings
+"   - Preview window on the right with 50% width
+"   - CTRL-/ will toggle preview window.
+" - Note that this array is passed as arguments to fzf#vim#with_preview function.
+" - To learn more about preview window options, see `--preview-window` section of `man fzf`.
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+map <C-f> :Files<CR>
+map <leader>B :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>T :Tags<CR>
+nnoremap <leader>L :Lines<CR>
+
+
+let g:fzf_tags_command = 'ctags -R'
+" Border jj
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+
+set rtp+=~/.vim/bundle/fzf

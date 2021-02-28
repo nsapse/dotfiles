@@ -79,13 +79,15 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    autopep8
+    cargo
 	github
     colorize
+    docker
+    docker-compose
     git
-    iterm2
     lein
     npm
-    npx
     python
     vi-mode
     zsh-autosuggestions
@@ -145,7 +147,8 @@ alias keebs="cd ~/Developer/keyboards"
 alias wallpaper="cd ~/Pictures/wallpapers"
 alias osu="cd ~/Developer/OSU"
 alias o290="cd ~/Developer/OSU/CS-290"
-alias o261="cd ~/Developer/OSU/-290"
+alias o261="cd ~/Developer/OSU/CS-261"
+alias scions="cd ~/Developer/scion_site/scion-exchange"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
@@ -191,6 +194,11 @@ alias tm="tmux"
 
 #python aliases
 alias py="python"
+
+#node aliases
+
+alias nd="node"
+
 
 #fzf stuff
 alias FF="fzf"
