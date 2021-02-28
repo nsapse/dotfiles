@@ -76,7 +76,7 @@ cnoreabbrev PC PlugClean
 
 call plug#begin()
 
-
+Plug 'metakirby5/codi.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'airblade/vim-rooter'
 Plug 'easymotion/vim-easymotion'
@@ -113,12 +113,13 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-"Plug 'frazrepo/vim-rainbow'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'yggdroot/indentline'
 Plug 'simnalamburt/vim-mundo'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
-colorscheme gruvbox-material
+colorscheme zenburn
 
 
 "Remappings for CoC
@@ -307,3 +308,11 @@ let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
 set rtp+=~/.vim/bundle/fzf
+
+"Goyo and Limelight Mapings
+map <silent><leader>z :Goyo<cr>
+
+"Autostart Rainbow Parens
+
+
+
