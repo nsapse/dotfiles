@@ -1,5 +1,4 @@
 "Just Setting Defaults"
-
 syntax on
 
 " vim paramaters 
@@ -64,7 +63,7 @@ map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
-cnoreabbrev vconf ~/.config/nvim/init.vim
+cnoreabbrev vc ~/.config/nvim/init.vim
 
 "Plugged Additions"
 
@@ -109,7 +108,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot' 
 Plug 'simnalamburt/vim-mundo'
-Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -259,18 +257,13 @@ vmap <leader>W :VimspectorWatch <C-R>0
 
 "imap <leader>b <plug>VimspectorToggleBreakpoint
 
-nmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
-vmap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>cb <plug>VimspectorToggleConditionalBreakpoint
+vmap <leader>cb <plug>VimspectorToggleConditionalBreakpoint
 "imap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
 
 
 " Emmet Mappings
 autocmd FileType .html,.css EmmetInstall
-
-" Vim Maximizer Mapppings
-nnoremap <silent><leader>M :MaximizerToggle<CR>
-vnoremap <silent><leader>M :MaximizerToggle<CR>gv
-inoremap <silent><leader>M <C-o>:MaximizerToggle<CR>
 
 " Mustache Abbrevs
 let g:mustache_abbreviations = 1
