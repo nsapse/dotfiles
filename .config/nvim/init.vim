@@ -78,7 +78,7 @@ call plug#begin()
 
 Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
-"Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
 Plug 'flazz/vim-colorschemes'
 Plug 'heavenshell/vim-pydocstring'
@@ -120,7 +120,6 @@ Plug 'vim-utils/vim-man'
 Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'yggdroot/indentline'
-Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -186,18 +185,16 @@ map <silent><C-n> :NERDTreeToggle<CR>
 
 
 " Remappings for vim-easymotion
-" <Leader>f{char} to move to {char} 
+"<Leader>f{char} to move to {char} 
 "
 nnoremap<silent><leader>k :wincmd k<cr>
-" Replaced with Sneak
-"
-"map  <Leader>f <Plug>(easymotion-bd-f)
-"nmap <Leader>f <Plug>(easymotion-overwin-f)
-"map  <Leader>w <Plug>(easymotion-bd-w)
-"nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree"
-"nmap <leader>U :UndotreeToggle<cr>
+nmap <leader>U :UndotreeToggle<cr>
 
 " NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
@@ -330,10 +327,10 @@ let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 
 " Default: 0.5
-let g:limelight_default_coefficient = 0.7
+let g:limelight_default_coefficient = 0.5
 
 " Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 0
+let g:limelight_paragraph_span = 1
 
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
@@ -350,23 +347,4 @@ autocmd! User GoyoLeave Limelight!
 
 "Autostart Rainbow Parens
 
-"Vim-Sneak
-
-" remap s to f so we can still use s for text editing
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S 
-
-let g:sneak#label = 1
-
-" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
-let g:sneak#s_next = 1
-
-
- "remap so I can use , and ; with f and t
-"map gS <Plug>Sneak_,
-"map gs <Plug>Sneak_;
-
-" Change the colors
-highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
-highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
 
