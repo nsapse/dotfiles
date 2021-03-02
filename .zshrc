@@ -190,6 +190,8 @@ alias smdb="systemctl enable mariadb.service"
 #pacman aliases
 alias pacS="sudo pacman -S"
 alias pacSyu="sudo pacman -Syu"
+alias vpac="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias vyay="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro sudo yay -S"
 
 #tmux aliases
 alias ta="tmux attach -t"
@@ -247,3 +249,7 @@ ex ()
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# sourcing FZF bindings
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
