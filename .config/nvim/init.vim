@@ -150,8 +150,8 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
 " Allow formatting using coc-prettier
-vmap <leader>FF  <Plug>(coc-format-selected)
-nmap <leader>FF  <Plug>(coc-format-selected)
+vmap <leader><c-f>  <Plug>(coc-format-selected)
+nmap <leader><c-f>  <Plug>(coc-format-selected)
 
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
@@ -193,10 +193,10 @@ map <silent><C-n> :NERDTreeToggle<CR>
 "<Leader>f{char} to move to {char} 
 "
 nnoremap<silent><leader>k :wincmd k<cr>
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  FF <Plug>(easymotion-bd-f)
+nmap FF <Plug>(easymotion-overwin-f)
+map  WW <Plug>(easymotion-bd-w)
+nmap WW <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
 "nmap <leader>U :UndotreeToggle<cr>
@@ -255,8 +255,6 @@ nmap <leader>bb <Plug>VimspectorToggleConditionalBreakpoint
 nmap <leader>B :call vimspector#ClearBreakpoints()<CR>
 nmap <leader>drc  <Plug>VimspectorRunToCursor
 nmap <leader>DD <Plug>VimspectorContinue
-nmap <leader>] <Plug>VimspectorStepOver
-nmap <leader>} <Plug>VimspectorStepInto
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
