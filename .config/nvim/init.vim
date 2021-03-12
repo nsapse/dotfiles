@@ -43,8 +43,9 @@ nnoremap<silent><c-H> :vertical resize -5<cr>
 nnoremap<silent><c-K> :resize -5<cr>
 nnoremap<silent><c-J> :resize +5<cr>
 
+nnoremap<leader>C :Colors<cr>
 
-"buffer and tab navigation
+"buffer, tab, and other quick  navigation
 "
 nnoremap <silent> b] :bnext<cr>
 nnoremap <silent> b[ :bprevious<cr>
@@ -55,8 +56,10 @@ nnoremap <silent> t] :tabnext<cr>
 nnoremap <silent> t[ :tabprevious<cr>
 nnoremap <silent> T[ :tabfirst<cr>
 nnoremap <silent> T] :tablast<cr>
+nnoremap <silent><leader> T :tabnew<cr>
 
 nnoremap <leader>R :reg<cr>
+
 "Traditional (Non-Vim) Save and Quit Bindings
 nnoremap <c-s> :wa<cr>
 map <c-q> :qa<cr>
@@ -79,7 +82,6 @@ Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
-Plug 'flazz/vim-colorschemes'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -94,7 +96,6 @@ Plug 'markonm/traces.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'metakirby5/codi.vim'
-Plug 'morhetz/gruvbox'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -108,6 +109,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot' 
 Plug 'simnalamburt/vim-mundo'
+Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -119,6 +121,11 @@ Plug 'voldikss/vim-floaterm'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'yggdroot/indentline'
 
+"colorschemes
+Plug 'sainnhe/forest-night'
+Plug 'b4skyx/serenade'
+Plug 'morhetz/gruvbox'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 colorscheme gruvbox-material
@@ -143,8 +150,8 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
 " Allow formatting using coc-prettier
-vmap <leader>FF  <Plug>(coc-format-selected)
-nmap <leader>FF  <Plug>(coc-format-selected)
+vmap <leader><c-f>  <Plug>(coc-format-selected)
+nmap <leader><c-f>  <Plug>(coc-format-selected)
 
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
@@ -186,13 +193,13 @@ map <silent><C-n> :NERDTreeToggle<CR>
 "<Leader>f{char} to move to {char} 
 "
 nnoremap<silent><leader>k :wincmd k<cr>
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  FF <Plug>(easymotion-bd-f)
+nmap FF <Plug>(easymotion-overwin-f)
+map  WW <Plug>(easymotion-bd-w)
+nmap WW <Plug>(easymotion-overwin-w)
 
-"Remapping for Undotree"
-nmap <leader>U :UndotreeToggle<cr>
+"Remapping for Undotree" - Switched to Mundo
+"nmap <leader>U :UndotreeToggle<cr>
 
 " NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
@@ -244,9 +251,10 @@ nnoremap <silent><leader>dr :VimspectorReset<CR>
 vnoremap <silent><leader>dr :VimspectorReset<CR>
 nmap <leader>b <Plug>VimspectorToggleBreakpoint
 vmap <leader>b <plug>VmspectorToggleBreakpoint
-nmap <leader>cb <Plug>VimspectorToggleConditionalBreakpoint
+nmap <leader>bb <Plug>VimspectorToggleConditionalBreakpoint
 nmap <leader>B :call vimspector#ClearBreakpoints()<CR>
 nmap <leader>drc  <Plug>VimspectorRunToCursor
+nmap <leader>DD <Plug>VimspectorContinue
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
@@ -264,6 +272,7 @@ vmap <leader>cb <plug>VimspectorToggleConditionalBreakpoint
 
 " Emmet Mappings
 autocmd FileType .html,.css EmmetInstall
+
 
 " Mustache Abbrevs
 let g:mustache_abbreviations = 1
@@ -323,7 +332,7 @@ let g:limelight_conceal_guifg = '#777777'
 let g:limelight_default_coefficient = 0.5
 
 " Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span = 1
+let g:limelight_paragraph_span = 2
 
 " Beginning/end of paragraph
 "   When there's no empty line between the paragraphs
@@ -338,6 +347,8 @@ let g:limelight_priority = -1
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-"Autostart Rainbow Parens
-
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
 
