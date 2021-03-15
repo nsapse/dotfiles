@@ -38,10 +38,12 @@ nnoremap<silent><leader>t :wincmd t<cr>
 nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <silent><leader><leader>n :nohlsearch<cr>
 
-nnoremap<silent><c-L> :vertical resize +5<cr>
-nnoremap<silent><c-H> :vertical resize -5<cr>
-nnoremap<silent><c-K> :resize -5<cr>
-nnoremap<silent><c-J> :resize +5<cr>
+" need to find a better solution for window resizing 
+
+"nnoremap<silent><c-L> :vertical resize +5<cr>
+"nnoremap<silent><c-H> :vertical resize -5<cr>
+"nnoremap<silent><c-K> :resize -5<cr>
+"nnoremap<silent><c-J> :resize +5<cr>
 
 nnoremap<leader>C :Colors<cr>
 
@@ -61,12 +63,15 @@ nnoremap <silent><leader> T :tabnew<cr>
 nnoremap <leader>R :reg<cr>
 
 "Traditional (Non-Vim) Save and Quit Bindings
-nnoremap <c-s> :wa<cr>
+
+nnoremap <c-s> :w<cr>
+nnoremap <c-S><c-S> :wa<cr>
 map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
 cnoreabbrev vc ~/.config/nvim/init.vim
+
 
 "Plugged Additions"
 
@@ -113,7 +118,7 @@ Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
@@ -193,10 +198,10 @@ map <silent><C-n> :NERDTreeToggle<CR>
 "<Leader>f{char} to move to {char} 
 "
 nnoremap<silent><leader>k :wincmd k<cr>
-map  FF <Plug>(easymotion-bd-f)
-nmap FF <Plug>(easymotion-overwin-f)
-map  WW <Plug>(easymotion-bd-w)
-nmap WW <Plug>(easymotion-overwin-w)
+map  <leader>f <Plug>(easymotion-bd-f)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+map  <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
 "nmap <leader>U :UndotreeToggle<cr>
