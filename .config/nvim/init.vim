@@ -1,6 +1,5 @@
 "Just Setting Defaults"
 syntax on
-
 " vim paramaters 
 set nu
 set rnu 
@@ -113,12 +112,12 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot' 
+Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-"Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
@@ -357,3 +356,10 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+" command to double a variable: {variable} for printing in a python formatted string
+
+function! MakeFPrintable()
+ normal! yawea: { }h[pxx
+endfunction
+
+nnoremap <leader>pfs :call MakeFPrintable()<cr>

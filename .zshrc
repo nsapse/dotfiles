@@ -122,19 +122,19 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # access config files
-alias zconf="nvim ~/.zshrc"
+alias zc="nvim ~/.zshrc"
 alias zso="source ~/.zshrc"
-alias nconf="nvim ~/.config/nvim/init.vim"
-alias xconf="nvim ~/.xinitrc"
-alias bconf="nvim ~/.config/bspwm/bspwmrc"
-alias sxconf="nvim ~/.config/sxhkd/sxhkdrc"
-alias pbconf="nvim ~/.config/polybar/config"
-alias tconf="nvim ~/.tmux.conf"
-alias lgconf="nvim ~/.config/jesseduffield/lazygit/config.yml"
-alias plconf="nvim ~/.p10k.zsh"
-alias iconf="nvim ~/.config/i3/config"
-alias piconf="nvim ~/.config/picom.conf"
-alias alaconf="nvim ~/.config/alacritty/alacritty.yml"
+alias nc="nvim ~/.config/nvim/init.vim"
+alias xc="nvim ~/.xinitrc"
+alias bc="nvim ~/.config/bspwm/bspwmrc"
+alias sxc="nvim ~/.config/sxhkd/sxhkdrc"
+alias pbc="nvim ~/.config/polybar/config"
+alias tc="nvim ~/.tmux.conf"
+alias lgc="nvim ~/.config/jesseduffield/lazygit/config.yml"
+alias plc="nvim ~/.p10k.zsh"
+alias ic="nvim ~/.config/i3/config"
+alias pic="nvim ~/.config/picom.conf"
+alias alac="nvim ~/.config/alacritty/alacritty.yml"
 
 
 
