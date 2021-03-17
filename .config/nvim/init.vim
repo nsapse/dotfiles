@@ -1,9 +1,8 @@
 "Just Setting Defaults"
 syntax on
-
-" vim paramaters 
+" vim paramaters
 set nu
-set rnu 
+set rnu
 set termguicolors
 set tabstop=4 softtabstop=4 expandtab
 set shiftwidth=4
@@ -38,10 +37,12 @@ nnoremap<silent><leader>t :wincmd t<cr>
 nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <silent><leader><leader>n :nohlsearch<cr>
 
-nnoremap<silent><c-L> :vertical resize +5<cr>
-nnoremap<silent><c-H> :vertical resize -5<cr>
-nnoremap<silent><c-K> :resize -5<cr>
-nnoremap<silent><c-J> :resize +5<cr>
+" need to find a better solution for window resizing
+
+"nnoremap<silent><c-L> :vertical resize +5<cr>
+"nnoremap<silent><c-H> :vertical resize -5<cr>
+"nnoremap<silent><c-K> :resize -5<cr>
+"nnoremap<silent><c-J> :resize +5<cr>
 
 nnoremap<leader>C :Colors<cr>
 
@@ -61,12 +62,15 @@ nnoremap <silent><leader> T :tabnew<cr>
 nnoremap <leader>R :reg<cr>
 
 "Traditional (Non-Vim) Save and Quit Bindings
-nnoremap <c-s> :wa<cr>
+
+nnoremap <c-s> :w<cr>
+nnoremap <c-S><c-S> :wa<cr>
 map <c-q> :qa<cr>
 
 
 map <leader><c-s> :so %<CR> 
 cnoreabbrev vc ~/.config/nvim/init.vim
+
 
 "Plugged Additions"
 
@@ -107,13 +111,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/gruvbox-material'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot' 
+Plug 'sheerun/vim-polyglot'
+Plug 'simeji/winresizer'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
@@ -135,18 +139,18 @@ colorscheme gruvbox-material
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
 " like VSCode inoremap <silent><expr> <TAB>"
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-		inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
- 
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 
-let g:coc_snippet_next = '<c-j>' 
+let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
 " Allow formatting using coc-prettier
@@ -158,10 +162,10 @@ nmap <leader><c-f>  <Plug>(coc-format-selected)
 " position. Coc only does snippet and additional edit on confirm. " <cr>
 " could be remapped by other vim plugin, try `:verbose imap <CR>`."
 
-if exists('*complete_info')   
- inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else   
- inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
+if exists('*complete_info')
+    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 "additional Coc remappings for plugsin
@@ -180,7 +184,7 @@ let g:coc_snippet_prev = '<c-k>'
 "
 " emap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
+    execute 'CocCommand actions.open ' . a:type
 endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
@@ -190,20 +194,20 @@ map <silent><C-n> :NERDTreeToggle<CR>
 
 
 " Remappings for vim-easymotion
-"<Leader>f{char} to move to {char} 
+"<Leader>f{char} to move to {char}
 "
 nnoremap<silent><leader>k :wincmd k<cr>
-map  FF <Plug>(easymotion-bd-f)
-nmap FF <Plug>(easymotion-overwin-f)
-map  WW <Plug>(easymotion-bd-w)
-nmap WW <Plug>(easymotion-overwin-w)
+map  <leader>f <Plug>(easymotion-bd-f)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+map  <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
 "nmap <leader>U :UndotreeToggle<cr>
 
-" NerdCommenter Remap to Match VSCode, Etc.
 nmap <C-_> <Leader>c<Space>
-vmap <C-_> <Leader>c<Space>
+vnoremap <C-_> <Leader>c<Space>
+map <C-_> <Leader>c<Space>
 
 "ctrl-p launches FZF
 "nnoremap <c-p> :FZF<cr>
@@ -230,7 +234,7 @@ let      g:floaterm_gitcommit='vsplit'
 
 "Vim autoformat binding
 
-nnoremap <leader>FF :Autoformat<cr>
+map <leader>FF :Autoformat<cr>
 
 "EasyAlign Bindings
 
@@ -259,15 +263,9 @@ nmap <leader>DD <Plug>VimspectorContinue
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
 cnoreabbrev SS str(self)
-
 nmap <leader>W :VimspectorWatch <C-R>0
 vmap <leader>W :VimspectorWatch <C-R>0
-
-"imap <leader>b <plug>VimspectorToggleBreakpoint
-
-nmap <leader>cb <plug>VimspectorToggleConditionalBreakpoint
-vmap <leader>cb <plug>VimspectorToggleConditionalBreakpoint
-"imap <leader>bc <plug>VimspectorToggleConditionalBreakpoint
+nnoremap <leader>W :VimspectorWatch <C-R>0
 
 
 " Emmet Mappings
@@ -278,7 +276,7 @@ autocmd FileType .html,.css EmmetInstall
 let g:mustache_abbreviations = 1
 
 " vim rainbow
-let g:rainbow_active = 1 
+let g:rainbow_active = 1
 
 "Vim-Mundo Mappings
 nnoremap <leader><leader>u :MundoToggle<cr>
@@ -292,9 +290,9 @@ let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 
 " This is the default extra key bindings
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+            \ 'ctrl-t': 'tab split',
+            \ 'ctrl-x': 'split',
+            \ 'ctrl-v': 'vsplit' }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -349,6 +347,21 @@ autocmd! User GoyoLeave Limelight!
 
 " Or if you have Neovim >= 0.1.5
 if (has("termguicolors"))
- set termguicolors
+    set termguicolors
 endif
+
+" command to double a variable: {variable} for printing in a python formatted string
+
+function! MakeFPrintable()
+    normal! yawea: { }h[pxx
+endfunction
+
+nnoremap <leader>fsf :call MakeFPrintable()<cr>
+
+function! MakeFString()
+    normal! mmF"if`m
+endfunction
+
+nnoremap <leader>pfs :call MakeFString()<cr>
+
 

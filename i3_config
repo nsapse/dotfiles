@@ -175,7 +175,8 @@ bindsym $mod+Shift+q kill
 
 # Working Modified Rofi Call
 #bindsym $mod+d exec rofi -show drun 
-bindsym $mod+space exec rofi-appsmenu
+bindsym $mod+d exec rofi-appsmenu
+
 #-f lines 9 -eh 2 -width 100 -opacity "85" -fullscreen -padding 800 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlfg "#9575cd" --font "System San Francisco Display 18"
 
 # Setup Rofi-Menu Mods 
