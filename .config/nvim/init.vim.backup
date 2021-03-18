@@ -1,8 +1,6 @@
 "Just Setting Defaults"
 syntax on
-
 " vim paramaters
-"
 set nu
 set rnu
 set termguicolors
@@ -25,13 +23,6 @@ set shortmess=aFc
 " Leader set to <Space>"
 
 let mapleader = " "
-let maplocalleader = "\\"
-
-" commands to edit the vim rc quickly
-nnoremap <leader>ec :vsplit $MYVIMRC<cr>
-nnoremap <leader>sc :so $MYVIMRC<cr>
-map <leader><c-s> :so %<CR>
-cnoreabbrev vc ~/.config/nvim/init.vim
 
 "Remapping Default Commands to Leader
 nnoremap<silent><leader>s :wincmd v<cr>
@@ -39,16 +30,21 @@ nnoremap<silent><leader>S :wincmd s<cr>
 nnoremap<silent><leader>c :wincmd c<cr>
 nnoremap<silent><leader>h :wincmd h<cr>
 nnoremap<silent><leader>j :wincmd j<cr>
-cnoremap<silent><leader>k :wincmd k<cr>
+nnoremap<silent><leader>k :wincmd k<cr>
 nnoremap<silent><leader>l :wincmd l<cr>
 nnoremap<silent><leader>t :wincmd t<cr>
 
 nnoremap<silent><leader>ig :IndentGuidesToggle<cr>
 map <silent><leader><leader>n :nohlsearch<cr>
 
-" quick maps into a bunch of vim areas
+" need to find a better solution for window resizing
+
+"nnoremap<silent><c-L> :vertical resize +5<cr>
+"nnoremap<silent><c-H> :vertical resize -5<cr>
+"nnoremap<silent><c-K> :resize -5<cr>
+"nnoremap<silent><c-J> :resize +5<cr>
+
 nnoremap<leader>C :Colors<cr>
-nnoremap <leader>R :reg<cr>
 
 "buffer, tab, and other quick  navigation
 "
@@ -63,10 +59,18 @@ nnoremap <silent> T[ :tabfirst<cr>
 nnoremap <silent> T] :tablast<cr>
 nnoremap <silent><leader> T :tabnew<cr>
 
+nnoremap <leader>R :reg<cr>
+
 "Traditional (Non-Vim) Save and Quit Bindings
+
 nnoremap <c-s> :w<cr>
-nnoremap <c-s[j>s :wa<cr>
+nnoremap <c-S><c-S> :wa<cr>
 map <c-q> :qa<cr>
+
+
+map <leader><c-s> :so %<CR> 
+cnoreabbrev vc ~/.config/nvim/init.vim
+
 
 "Plugged Additions"
 
@@ -82,7 +86,6 @@ Plug 'airblade/vim-rooter'
 Plug 'chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
-"Plug 'ervandew/supertab'
 Plug 'heavenshell/vim-pydocstring'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -110,7 +113,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'simeji/winresizer'
-Plug 'SirVer/ultisnips'
 Plug 'simnalamburt/vim-mundo'
 Plug 'szw/vim-maximizer'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
@@ -128,25 +130,10 @@ Plug 'sainnhe/forest-night'
 Plug 'b4skyx/serenade'
 Plug 'morhetz/gruvbox'
 Plug 'flazz/vim-colorschemes'
-Plug 'ulwlu/elly.vim'
 call plug#end()
 
-"colorscheme mappings
-colorscheme hybrid_material
-let g:airline_theme='hybrid'
+colorscheme gruvbox-material
 
-"set background=dark
-"hi normal guibg=none ctermbg=none
-
-if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-" Or if you have Neovim >= 0.1.5
-if (has("termguicolors"))
-    set termguicolors
-endif
 
 "Remappings for CoC
 " <TAB> - trigger completion, pum navigate, snippet expand and jump
@@ -162,9 +149,7 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:UltiSnipsExpandTrigger='~'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
@@ -189,10 +174,11 @@ nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>rr <Plug>(coc-rename)
 cnoreabbrev CM CocList marketplace
-
-
+ 
+"mappings for Coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
-inoremap <C-l> <Plug>(coc-snippets-expand)<cr>
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
 
 "mappings for Coc-actions
 "
@@ -200,8 +186,8 @@ inoremap <C-l> <Plug>(coc-snippets-expand)<cr>
 function! s:cocActionsOpenFromSelected(type) abort
     execute 'CocCommand actions.open ' . a:type
 endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-nnoremap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 "remapping for NERDTree
 map <silent><C-n> :NERDTreeToggle<CR>
@@ -210,11 +196,11 @@ map <silent><C-n> :NERDTreeToggle<CR>
 " Remappings for vim-easymotion
 "<Leader>f{char} to move to {char}
 "
+nnoremap<silent><leader>k :wincmd k<cr>
 map  <leader>f <Plug>(easymotion-bd-f)
 nmap <leader>f <Plug>(easymotion-overwin-f)
 map  <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
-nnoremap <leader>w <Plug>(easymotion-overwin-w)
 
 "Remapping for Undotree" - Switched to Mundo
 "nmap <leader>U :UndotreeToggle<cr>
@@ -250,9 +236,9 @@ let      g:floaterm_gitcommit='vsplit'
 
 map <leader>FF :Autoformat<cr>
 
-
 "EasyAlign Bindings
 
+xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 noremap <leader><leader>A :EasyAlign
 
@@ -266,18 +252,17 @@ let g:asmsytax = 'masm'
 " VSCode Mappings for Vimspector  etc
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 nnoremap <silent><leader>dr :VimspectorReset<CR>
+vnoremap <silent><leader>dr :VimspectorReset<CR>
 nmap <leader>b <Plug>VimspectorToggleBreakpoint
 vmap <leader>b <plug>VmspectorToggleBreakpoint
 nmap <leader>bb <Plug>VimspectorToggleConditionalBreakpoint
 nmap <leader>B :call vimspector#ClearBreakpoints()<CR>
 nmap <leader>drc  <Plug>VimspectorRunToCursor
 nmap <leader>DD <Plug>VimspectorContinue
-nnoremap <leader>DD <Plug>VimspectorContinue
 
 " remap watch command to be shorter
 cnoreabbrev vsw VimspectorWatch
 cnoreabbrev SS str(self)
-
 nmap <leader>W :VimspectorWatch <C-R>0
 vmap <leader>W :VimspectorWatch <C-R>0
 nnoremap <leader>W :VimspectorWatch <C-R>0
@@ -314,9 +299,9 @@ let g:fzf_action = {
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-nmap <leader><leader>f :Files<CR>
-nmap <leader><leader>b :Buffers<CR>
-noremap <leader><leader>b :Buffers<CR>
+
+map <leader><leader>f :Files<CR>
+map <leader><leader>b :Buffers<CR>
 nnoremap <leader><leader>g :Rg<CR>
 nnoremap <leader><leader>t :Tags<CR>
 nnoremap <leader><leader>l :Lines<CR>
@@ -360,6 +345,10 @@ let g:limelight_priority = -1
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" Or if you have Neovim >= 0.1.5
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " command to double a variable: {variable} for printing in a python formatted string
 
@@ -367,7 +356,7 @@ function! MakeFPrintable()
     normal! yawea: { }h[pxx
 endfunction
 
-nnoremap <leader>ffs call MakeFPrintable()<cr>
+nnoremap <leader>fsf :call MakeFPrintable()<cr>
 
 function! MakeFString()
     normal! mmF"if`m
@@ -375,7 +364,4 @@ endfunction
 
 nnoremap <leader>pfs :call MakeFString()<cr>
 
-"" autocommands
 
-" auto format on save
-au BufWrite * :Autoformat
