@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -81,7 +81,7 @@ POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status virtualenv vi_mode )
 plugins=(
     autopep8
     cargo
-	github
+    github
     colorize
     docker
     docker-compose
@@ -146,9 +146,10 @@ alias conf="cd ~/.config"
 alias keebs="cd ~/Developer/keyboards"
 alias wallpaper="cd ~/Pictures/wallpapers"
 alias osu="cd ~/Developer/OSU"
-alias o290="cd ~/Developer/OSU/CS-290"
-alias o261="cd ~/Developer/OSU/CS-261"
+alias _290="cd ~/Developer/OSU/CS-290"
+alias _261="cd ~/Developer/OSU/CS-261"
 alias scions="cd ~/Developer/scion_site/scion-exchange"
+alias _bash="cd ~/Developer/bash"
 
 # navigation and history
 alias lsa="ls -a -l --color=auto"
@@ -159,12 +160,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias chx="chmod +x"
 mcd(){
-mkdir $1 && cd $1
+    mkdir $1 && cd $1
 }
 
 #nvim related aliasing and functions
 nt(){
-touch $1 && nvim $1
+    touch $1 && nvim $1
 }
 
 alias nv="nvim"
@@ -200,7 +201,7 @@ alias ts="tmux new-session -s"
 alias tk="tmux kill-session -t"
 alias tm="tmux"
 
-#gcc aliases 
+#gcc aliases
 
 #python aliases
 alias py="python"
@@ -220,27 +221,27 @@ alias NF='nvim $(fzf)'
 # usage: ex <file>
 ex ()
 {
-  if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;      
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
